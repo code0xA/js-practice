@@ -1,0 +1,463 @@
+
+# 📚 JavaScript String Methods — Quick Reference
+
+---
+
+### 1. `anchor(name)`
+Creates an `<a>` HTML anchor.
+
+```javascript
+console.log("Hello".anchor("myLink")); // <a name="myLink">Hello</a>
+```
+
+---
+
+### 2. `at(index)`
+Returns character at a given position (can use negative index too).
+
+```javascript
+console.log("Hello".at(1));   // 'e'
+console.log("Hello".at(-1));  // 'o'
+```
+
+---
+
+### 3. `big()`
+Makes text big with `<big>` tag.
+
+```javascript
+console.log("Hello".big()); // <big>Hello</big>
+```
+
+---
+
+### 4. `blink()`
+Creates blinking text (HTML `<blink>` tag — **not supported** now).
+
+```javascript
+console.log("Hello".blink()); // <blink>Hello</blink>
+```
+
+---
+
+### 5. `bold()`
+Wraps text in `<b>` tag.
+
+```javascript
+console.log("Hello".bold()); // <b>Hello</b>
+```
+
+---
+
+### 6. `charAt(index)`
+Returns character at given index.
+
+```javascript
+console.log("Hello".charAt(1)); // 'e'
+```
+
+---
+
+### 7. `charCodeAt(index)`
+Returns **Unicode** of character at index.
+
+```javascript
+console.log("Hello".charCodeAt(0)); // 72
+```
+
+---
+
+### 8. `codePointAt(index)`
+Returns **Unicode code point** of character at position.
+
+```javascript
+console.log("Hello".codePointAt(0)); // 72
+```
+
+---
+
+### 9. `concat(str1, str2, …)`
+Joins two or more strings.
+
+```javascript
+console.log("Hello".concat(" World")); // 'Hello World'
+```
+
+---
+
+### 10. `constructor`
+Returns the function that created the string's prototype.
+
+```javascript
+console.log("Hello".constructor); // function String() { [native code] }
+```
+
+---
+
+### 11. `endsWith(searchString)`
+Checks if string **ends with** given text.
+
+```javascript
+console.log("Hello".endsWith("lo")); // true
+```
+
+---
+
+### 12. `fixed()`
+Displays text in `<tt>` (teletype) HTML tag.
+
+```javascript
+console.log("Hello".fixed()); // <tt>Hello</tt>
+```
+
+---
+
+### 13. `fontcolor(color)`
+Sets font color in HTML.
+
+```javascript
+console.log("Hello".fontcolor("red")); // <font color="red">Hello</font>
+```
+
+---
+
+### 14. `fontsize(size)`
+Sets font size in HTML.
+
+```javascript
+console.log("Hello".fontsize(7)); // <font size="7">Hello</font>
+```
+
+---
+
+### 15. `includes(value)`
+Checks if string contains a value.
+
+```javascript
+console.log("Hello World".includes("World")); // true
+```
+
+---
+
+### 16. `indexOf(value)`
+Finds first occurrence index.
+
+```javascript
+console.log("Hello World".indexOf("o")); // 4
+```
+
+---
+
+### 17. `isWellFormed()`
+Checks if string is well-formed UTF-16.
+
+```javascript
+console.log("Hello".isWellFormed()); // true
+```
+
+---
+
+### 18. `italics()`
+Wraps text in `<i>` tag.
+
+```javascript
+console.log("Hello".italics()); // <i>Hello</i>
+```
+
+---
+
+### 19. `lastIndexOf(value)`
+Finds last occurrence index.
+
+```javascript
+console.log("Hello World".lastIndexOf("o")); // 7
+```
+
+---
+
+### 20. `length`
+Gives string length.
+
+```javascript
+console.log("Hello".length); // 5
+```
+
+---
+
+### 21. `link(url)`
+Wraps string inside a clickable link (`<a>`).
+
+```javascript
+console.log("Google".link("https://google.com"));
+// <a href="https://google.com">Google</a>
+```
+
+---
+
+### 22. `localeCompare(compareString)`
+Compares two strings (returns -1, 0, 1).
+
+```javascript
+console.log("a".localeCompare("b")); // -1
+```
+
+---
+
+### 23. `match(regex)`
+Matches string with regex pattern.
+
+```javascript
+console.log("abc123".match(/\d+/)); // ['123']
+```
+
+---
+
+### 24. `matchAll(regex)`
+Returns all regex matches (Iterator).
+
+```javascript
+let matches = [..."test1test2".matchAll(/t(e)(st(\d?))/g)];
+console.log(matches[0][0]); // 'test1'
+```
+
+---
+
+### 25. `normalize(form)`
+Normalizes Unicode characters.
+
+```javascript
+console.log("\u0041\u030A".normalize()); // 'Å'
+```
+
+---
+
+### 26. `padEnd(targetLength, padString)`
+Pads string at the end.
+
+```javascript
+console.log("5".padEnd(4, "0")); // '5000'
+```
+
+---
+
+### 27. `padStart(targetLength, padString)`
+Pads string at the start.
+
+```javascript
+console.log("5".padStart(4, "0")); // '0005'
+```
+
+---
+
+### 28. `repeat(count)`
+Repeats string `count` times.
+
+```javascript
+console.log("Hi".repeat(3)); // 'HiHiHi'
+```
+
+---
+
+### 29. `replace(searchFor, replaceWith)`
+Replaces first match.
+
+```javascript
+console.log("Hello World".replace("World", "Friend")); // 'Hello Friend'
+```
+
+---
+
+### 30. `replaceAll(searchFor, replaceWith)`
+Replaces **all** matches.
+
+```javascript
+console.log("apple apple".replaceAll("apple", "orange")); // 'orange orange'
+```
+
+---
+
+### 31. `search(regex)`
+Searches string using regex (returns index).
+
+```javascript
+console.log("abc123".search(/\d/)); // 3
+```
+
+---
+
+### 32. `slice(start, end)`
+Slices out a part of string.
+
+```javascript
+console.log("Hello".slice(1, 4)); // 'ell'
+```
+
+---
+
+### 33. `small()`
+Wraps text in `<small>` tag.
+
+```javascript
+console.log("Hello".small()); // <small>Hello</small>
+```
+
+---
+
+### 34. `split(separator)`
+Splits string into array.
+
+```javascript
+console.log("a,b,c".split(",")); // ['a', 'b', 'c']
+```
+
+---
+
+### 35. `startsWith(value)`
+Checks if string starts with given text.
+
+```javascript
+console.log("Hello".startsWith("He")); // true
+```
+
+---
+
+### 36. `strike()`
+Wraps text with `<strike>` tag.
+
+```javascript
+console.log("Hello".strike()); // <strike>Hello</strike>
+```
+
+---
+
+### 37. `sub()`
+Wraps text in `<sub>` tag (subscript).
+
+```javascript
+console.log("Hello".sub()); // <sub>Hello</sub>
+```
+
+---
+
+### 38. `substr(start, length)`
+Returns part of string (deprecated but still used).
+
+```javascript
+console.log("Hello".substr(1, 3)); // 'ell'
+```
+
+---
+
+### 39. `substring(start, end)`
+Returns part of string (no negative values).
+
+```javascript
+console.log("Hello".substring(1, 4)); // 'ell'
+```
+
+---
+
+### 40. `sup()`
+Wraps text in `<sup>` tag (superscript).
+
+```javascript
+console.log("Hello".sup()); // <sup>Hello</sup>
+```
+
+---
+
+### 41. `toLocaleLowerCase()`
+Lowercase according to locale.
+
+```javascript
+console.log("HELLO".toLocaleLowerCase()); // 'hello'
+```
+
+---
+
+### 42. `toLocaleUpperCase()`
+Uppercase according to locale.
+
+```javascript
+console.log("hello".toLocaleUpperCase()); // 'HELLO'
+```
+
+---
+
+### 43. `toLowerCase()`
+Converts string to lowercase.
+
+```javascript
+console.log("HELLO".toLowerCase()); // 'hello'
+```
+
+---
+
+### 44. `toString()`
+Returns string itself.
+
+```javascript
+console.log("Hello".toString()); // 'Hello'
+```
+
+---
+
+### 45. `toUpperCase()`
+Converts string to uppercase.
+
+```javascript
+console.log("hello".toUpperCase()); // 'HELLO'
+```
+
+---
+
+### 46. `toWellFormed()`
+Returns a well-formed string (UTF-16).
+
+```javascript
+console.log("Hello".toWellFormed()); // 'Hello'
+```
+
+---
+
+### 47. `trim()`
+Removes spaces from both sides.
+
+```javascript
+console.log("  Hello  ".trim()); // 'Hello'
+```
+
+---
+
+### 48. `trimStart()`
+Removes spaces from the start.
+
+```javascript
+console.log("  Hello".trimStart()); // 'Hello'
+```
+
+---
+
+### 49. `trimEnd()`
+Removes spaces from the end.
+
+```javascript
+console.log("Hello  ".trimEnd()); // 'Hello'
+```
+
+---
+
+### 50. `valueOf()`
+Returns the primitive string value.
+
+```javascript
+console.log("Hello".valueOf()); // 'Hello'
+```
+
+---
+
+# 📌 Quick Tip:
+- If you need **basic day-to-day** usage, focus on:  
+`charAt`, `includes`, `indexOf`, `slice`, `substring`, `split`, `toUpperCase`, `toLowerCase`, `trim`, `replace`, `repeat`.
+
+---
