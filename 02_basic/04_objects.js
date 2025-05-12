@@ -41,10 +41,28 @@ const users = [
 ]
 
 users[1].email
-console.log(tinderUser);
-console.log(Object.keys(tinderUser)); //returns array of keys
-console.log(Object.values(tinderUser)); //returns array of values
-console.log(Object.entries(tinderUser)); //returns array within array. each key-value pair is array.
+// console.log(tinderUser);
+// console.log(Object.keys(tinderUser)); //returns array of keys
+// console.log(Object.values(tinderUser)); //returns array of values
+// console.log(Object.entries(tinderUser)); //returns array within array. each key-value pair is array.
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); //returns true
+//console.log(tinderUser.hasOwnProperty('isLoggedIn')); //returns true
 //To check if an object has a particular property
+
+//DESTRUCTURING
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "Hitesh"
+}
+
+//course.courseInstructor //To extract a feature or an object
+
+const {courseInstructor} = course //Syntax to extract value from object
+//Extract coursInstructor from "course" object. Now can directly call courseInstructor to get that value
+console.log(courseInstructor);
+
+//To give another name
+const {courseInstructor: instructor} = course
+//Can assign another name. Here, can simply call instructor to get value
+console.log(instructor);
