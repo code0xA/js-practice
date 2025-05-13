@@ -1,0 +1,106 @@
+Great! You're trying out three different types of loops in JavaScript. Let's walk through them with clear explanations and a focus on **where and when to use each** — plus fix any misuse.
+
+---
+
+## 🔁 Your Code Breakdown
+
+### 1️⃣ `for...in`
+
+```js
+for (const key in object) {
+    // Do something
+}
+```
+
+✅ **Use this when you're working with objects** — it loops through **keys (property names)**.
+
+Example:
+
+```js
+const user = { name: "Ana", age: 25 };
+for (const key in user) {
+    console.log(key);        // 'name', 'age'
+    console.log(user[key]);  // 'Ana', 25
+}
+```
+
+🟡 **Caution:** You *can* use it on arrays, but it gives you **index keys as strings**, not values.
+
+---
+
+### 2️⃣ `for...of`
+
+```js
+for (const element of object) {
+    // Do something
+}
+```
+
+❌ This will **throw an error** if `object` is a **plain object**, because objects aren't iterable.
+
+✅ Works great for **arrays, strings, maps, sets**, etc.
+
+Fix:
+
+```js
+const arr = ["js", "ruby", "java"];
+for (const element of arr) {
+    console.log(element);  // js, ruby, java
+}
+```
+
+---
+
+### 3️⃣ `.forEach()`
+
+```js
+const coding = ["js", "ruby", "java", "python", "cpp"];
+coding.forEach(function(val) {
+    console.log(val);
+});
+```
+
+✅ This is a **clean and readable way** to loop through arrays. It applies a function to each item in order.
+
+🧠 Keep in mind:
+
+* Cannot use `break` or `continue`
+* Doesn't play well with `async/await` out of the box
+
+---
+
+## ✅ Summary
+
+| Feature            | `for...in`                  | `for...of`                      | `.forEach()` |
+| ------------------ | --------------------------- | ------------------------------- | ------------ |
+| Best for           | **Objects**                 | **Arrays, Strings, Sets, Maps** | **Arrays**   |
+| Iterates over      | **Keys (indexes or props)** | **Values**                      | **Values**   |
+| Can break/continue | ✅                           | ✅                               | ❌            |
+| Works on Objects?  | ✅                           | ❌ (throws error)                | ❌            |
+| Works on Arrays?   | ✅ (not ideal)               | ✅                               | ✅            |
+
+---
+
+### 🧪 Try this:
+
+```js
+const coding = ["js", "ruby", "java", "python", "cpp"];
+const person = { name: "Ana", age: 25 };
+
+// for...in (object)
+for (const key in person) {
+    console.log(key, person[key]);
+}
+
+// for...of (array)
+for (const lang of coding) {
+    console.log(lang);
+}
+
+// forEach (array)
+coding.forEach(function (val) {
+    console.log(val);
+});
+```
+
+Let me know if you'd like a cheat sheet, diagram, or visual aid for all this!
