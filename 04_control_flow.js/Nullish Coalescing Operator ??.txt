@@ -1,0 +1,70 @@
+Great! You're exploring the **Nullish Coalescing Operator (`??`)** — a very useful and often misunderstood feature in JavaScript.
+
+---
+
+### ✅ Your code:
+
+```js
+let val1;
+val1 = null ?? 10 ?? 20;
+console.log(val1);
+```
+
+---
+
+### 🔎 What is `??`?
+
+The **Nullish Coalescing Operator** returns the **first value that is not `null` or `undefined`**.
+
+It’s different from `||` (logical OR), which returns the first **truthy** value.
+
+---
+
+### 🧠 So in your code:
+
+```js
+val1 = null ?? 10 ?? 20;
+```
+
+Here's how it's evaluated:
+
+1. `null ?? 10` → `10` (since `null` is nullish, it skips to `10`)
+2. Then `10 ?? 20` → `10` (since `10` is not nullish)
+
+✅ **Final value:**
+
+```js
+val1 = 10
+```
+
+So this logs:
+
+```
+10
+```
+
+---
+
+### 🧪 Other cases (for your reference):
+
+| Expression                | Result |
+| ------------------------- | ------ |
+| `5 ?? 10`                 | 5      |
+| `null ?? 10`              | 10     |
+| `undefined ?? 15`         | 15     |
+| `null ?? undefined ?? 20` | 20     |
+
+---
+
+### ⚠️ Important: Difference from `||`
+
+```js
+let x = 0 || 42;  // x = 42 (because 0 is falsy)
+let y = 0 ?? 42;  // y = 0  (because 0 is not nullish)
+```
+
+Use `??` when you **only want to default on `null` or `undefined`**, not on other falsy values like `0`, `''`, or `false`.
+
+---
+
+Let me know if you’d like a side-by-side comparison of `??` vs `||` in real-world use cases!

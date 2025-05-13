@@ -1,0 +1,112 @@
+Here's a clear **step-by-step bullet point explanation** of the **JavaScript execution flow** based on the image you provided: image.jpg
+
+---
+
+### 🟡 Code Overview (Top-Right):
+
+```js
+let val1 = 10;
+let val2 = 5;
+
+function addNum(num1, num2) {
+    let total = num1 + num2;
+    return total;
+}
+
+let result1 = addNum(val1, val2);
+let result2 = addNum(10, 2);
+```
+
+---
+
+### ✅ Step-by-Step Execution Flow:
+
+#### 1️⃣ **Global Execution Context Created**
+
+* JS engine creates the **Global Execution Context (GEC)**.
+* It includes:
+
+  * A **global memory space (variable environment)**.
+  * A reference to the **`this` keyword**.
+
+#### 2️⃣ **Memory Creation Phase (Global Context)**
+
+* JS scans through the code and **allocates memory** for variables and functions:
+
+  * `val1 → undefined`
+  * `val2 → undefined`
+  * `addNum → function definition` (entire function stored)
+  * `result1 → undefined`
+  * `result2 → undefined`
+
+✅ **Note:** No code is run yet — this is just memory setup.
+
+---
+
+#### 3️⃣ **Execution Phase (Global Context)**
+
+* JS starts executing code **line-by-line**:
+
+  * `val1 = 10`
+  * `val2 = 5`
+  * `addNum` already has the function definition
+  * `result1 = addNum(val1, val2)` → **function is invoked**
+
+---
+
+### 🔁 When `addNum(val1, val2)` is called:
+
+#### 🔹 A **New Function Execution Context** is created:
+
+* Stored in the **Call Stack**
+* Contains:
+
+  * A **new variable environment**
+  * An **execution thread**
+
+---
+
+#### 🔸 Inside `addNum(val1, val2)`:
+
+##### ✅ Memory Phase (for function context):
+
+* `num1 → undefined`
+* `num2 → undefined`
+* `total → undefined`
+
+##### ✅ Execution Phase:
+
+* `num1 = 10`
+* `num2 = 5`
+* `total = 10 + 5 = 15`
+* Function returns `15`
+* `result1 = 15`
+
+🗑️ After the function finishes:
+
+* Its **execution context is removed** (deleted) from the call stack.
+
+---
+
+### 🔁 Then `addNum(10, 2)` runs:
+
+* Same process happens again:
+
+  * `num1 = 10`
+  * `num2 = 2`
+  * `total = 12`
+  * `result2 = 12`
+
+* That function context is also removed after completion.
+
+---
+
+### 🧠 Summary
+
+* JS has **two phases**: Memory Creation and Execution.
+* Every function call creates a **new Execution Context**.
+* The **Call Stack** tracks function calls.
+* Memory is reserved first → then values are assigned.
+* After a function finishes, its context is deleted.
+
+---
