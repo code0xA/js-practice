@@ -1,0 +1,13 @@
+🔹 innerText
+Returns visible text (what the user actually sees).
+Ignores hidden elements (like display: none, visibility: hidden).
+Takes CSS styles (like line breaks) into account.
+Slower because it causes a reflow to check visibility.
+
+🔹 textContent
+Returns all text, visible and hidden.
+Ignores CSS styling.
+Faster than innerText.
+
+innerHTML
+supports html tags also i.e. shows them as well
