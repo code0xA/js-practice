@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(lang) {
+        const li = document.createElement('li')
+        li.innerHTML = `${lang}` //innerHTML traverses whole tree
+        document.querySelector('.language').appendChild(li) //innerHTML function has to traverse the whole tree to reach end before appending
+        //Which is why appendChild is better.
+    }
+    addLanguage('python')
+    addLanguage('typescript')
+
+    function addOptiLanguage(lang){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lang)) //instead of innerHTML, use appendChild to add textnode to newly created li.
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('goLang')
+
+    //Edit a value
+    const secondLang = document.querySelector("li:nth-child(2)") //css child node selector
+    //secondLang.innerHTML = "Mojo" //again traverses, not optimal
+    const newLi = document.createElement('li')
+    newLi.textContent = "Mojo"
+    secondLang.replaceWith(newLi) //replaces existing content with new content
+
+    //edit
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>TypeScript</li>' //changes using outerHTML, have to give whole html
+
+    //remove
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+</script>
+</html>
