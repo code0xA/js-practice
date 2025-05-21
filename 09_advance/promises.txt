@@ -1,0 +1,77 @@
+
+## 📌 **JavaScript Promises — Summary**
+
+### ✅ What is a Promise?
+
+A **Promise** represents a value that may be:
+
+1. **Pending** – still working.
+2. **Fulfilled (Resolved)** – operation successful.
+3. **Rejected** – operation failed.
+
+### ✅ Why use Promises?
+
+To handle **asynchronous operations** like API calls, file reads, timers, etc., in a **cleaner, more readable** way than nested callbacks.
+
+---
+
+## 🔹 **.then()**
+
+* Called **when the promise is resolved (successful)**.
+* Receives the result/data.
+
+```javascript
+promise.then(result => {
+  // handle success
+});
+```
+
+---
+
+## 🔹 **.catch()**
+
+* Called **when the promise is rejected (error)**.
+* Receives the error object.
+
+```javascript
+promise.catch(error => {
+  // handle error
+});
+```
+
+---
+
+## 🔹 **.finally()**
+
+* Runs **after the promise is settled** (whether resolved or rejected).
+* Used for cleanup like hiding loaders, resetting states, etc.
+
+```javascript
+promise.finally(() => {
+  // runs always
+});
+```
+
+---
+
+## ✅ Example:
+
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => response.json())       // success
+  .then(data => console.log(data))         // data received
+  .catch(error => console.error(error))    // if error
+  .finally(() => console.log('Done'));     // always runs
+```
+
+---
+
+## 🧠 Tip to Remember:
+
+| Method       | When it Runs          | Purpose                 |
+| ------------ | --------------------- | ----------------------- |
+| `.then()`    | On success            | Handle result/data      |
+| `.catch()`   | On failure            | Handle errors           |
+| `.finally()` | Always (after either) | Cleanup (loading, etc.) |
+
+---
